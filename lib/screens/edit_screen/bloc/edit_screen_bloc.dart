@@ -94,7 +94,9 @@ class EditScreenBloc extends Bloc<EditScreenEvent, EditScreenState> {
 
   Future<void> _onChangeLanguage(
       ChangeLanguageEvent event, Emitter<EditScreenState> emit) async {
-    // Заглушка
+    final currentState = state as EditScreenLoadedState;
+    emit(EditScreenLoadedState(
+        userInfo: currentState.userInfo.copyWith(language: event.newLanguage)));
   }
 
   Future<void> _onChangeExperience(

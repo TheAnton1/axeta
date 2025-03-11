@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:axeta/res/typography.dart';
 import 'package:axeta/screens/edit_screen/bloc/edit_screen_bloc.dart';
 import 'package:axeta/screens/edit_screen/bloc/edit_screen_events.dart';
+import 'package:axeta/screens/edit_screen/widgets/language_choice.dart';
 import 'package:axeta/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -84,10 +85,14 @@ class _EditPersonalBlockState extends State<EditPersonalBlock> {
             },
           ),
           const SizedBox(height: 16),
-          Text(
-            widget.language,
-            style: AppTypography.body,
-          )
+          ColoredBox(
+            color: Colors.white,
+            child: LanguageChoice(
+                value: widget.language,
+                onChanged: (value) {
+                  bloc.add(ChangeLanguageEvent(newLanguage: value));
+                }),
+          ),
         ],
       ),
     );

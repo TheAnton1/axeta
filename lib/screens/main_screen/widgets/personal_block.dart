@@ -17,6 +17,14 @@ class PersonalBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> _items = [
+      {'label': 'France', 'emoji': '🇫🇷'},
+      {'label': 'English', 'emoji': '🇬🇧'},
+      {'label': 'Spanish', 'emoji': '🇪🇸'},
+      {'label': 'Russian', 'emoji': '🇷🇺'},
+      {'label': 'Belgium', 'emoji': '🇧🇪'},
+    ];
+    final chosen = _items.firstWhere((e) => e['label'] == language);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -31,7 +39,7 @@ class PersonalBlock extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          language,
+          "${chosen['emoji']} ${chosen['label']}",
           style: AppTypography.body,
         )
       ],

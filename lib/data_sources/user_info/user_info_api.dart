@@ -59,7 +59,7 @@ class LocalUserInfoApi implements IUserInfoApi {
           'id': 1,
           'fullname': 'John Smith',
           'location': 'Portland, Oregon, USA',
-          'language': '🇷🇺 Russian',
+          'language': 'Russian',
           'avatarPath': null,
           'availability': 'Full-time',
           'environment': 'Github, Mac OSX',
